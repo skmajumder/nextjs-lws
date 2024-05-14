@@ -1,5 +1,10 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "About Us",
+  description: "This is a about us page",
+};
+
 export default function AboutLayout({ children }) {
   return (
     <div>
