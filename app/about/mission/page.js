@@ -1,4 +1,6 @@
 import Button from "@/app/components/Button";
+import Image from "next/image";
+import thumb from "@/public/images/thumb.jpg";
 
 export default function Mission() {
   return (
@@ -19,7 +21,12 @@ export default function Mission() {
         magni perspiciatis saepe quos animi itaque repellat laudantium incidunt
         error deleniti?
       </p>
+
       <Button />
+      
+      <div className="w-[800px]">
+        <Image src={thumb} placeholder="blur" alt="thumbnail" />
+      </div>
     </main>
   );
 }
