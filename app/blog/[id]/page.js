@@ -10,9 +10,9 @@ export default function Page({ params }) {
   }
 
   return (
-    <div>
-      <h1>{blogPost?.title}</h1>
-      <p>{blogPost?.description}</p>
+    <div className="py-6">
+      <h1 className="text-4xl font-thin underline-offset-2 mb-3">{blogPost?.title}</h1>
+      <p className="text-base font-normal tracking-wide">{blogPost?.description}</p>
     </div>
   );
 }
