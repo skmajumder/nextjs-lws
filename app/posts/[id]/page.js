@@ -1,6 +1,8 @@
-import Comments from "@/app/components/Comments";
 import getPost from "@/lib/getPost";
+import Comments from "@/app/components/Comments";
+import getAllPosts from "@/lib/getAllPosts";
 import getPostComments from "@/lib/getPostComments";
+
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
@@ -17,7 +19,7 @@ export async function generateMetadata({ params }) {
 
 export default async function PostPage({ params }) {
   const { id } = params;
-  
+
   const postPromise = getPost(id);
   const commentsPromise = getPostComments(id);
 
@@ -41,4 +43,12 @@ export default async function PostPage({ params }) {
       </Suspense>
     </div>
   );
+}
+
+export async function generateStaticParams({ params }) {
+  const posts = await getAllPosts();
+
+  return posts.map((post) => {
+    id: post.id.toString();
+  });
 }
