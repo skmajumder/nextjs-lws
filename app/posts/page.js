@@ -11,7 +11,7 @@ export default async function Posts() {
       <div className="space-y-5">
         {posts.map((post) => (
           <article key={post.id}>
-            <h2 className="text-xl font-light tracking-wide capitalize">
+            <h2 className="text-xl font-light tracking-wide">
               <Link href={`/posts/${post.id}`}>{post.title}</Link>
             </h2>
           </article>
