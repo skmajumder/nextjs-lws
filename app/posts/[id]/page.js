@@ -17,10 +17,13 @@ export async function generateMetadata({ params }) {
 
 export default async function PostPage({ params }) {
   const { id } = params;
-  const post = await getPost(id);
+  
+  const postPromise = getPost(id);
   const commentsPromise = getPostComments(id);
 
   // const [post, comments] = await Promise.all([postPromise, commentsPromise]);
+
+  const post = await postPromise;
 
   if (!post) {
     notFound();
